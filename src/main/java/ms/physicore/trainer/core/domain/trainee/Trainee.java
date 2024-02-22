@@ -1,11 +1,14 @@
 package ms.physicore.trainer.core.domain.trainee;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import ms.physicore.trainer.core.DTO.trainee.TraineeRequestDTO;
 import ms.physicore.trainer.core.domain.Gender;
 import ms.physicore.trainer.core.domain.Workout;
 import ms.physicore.trainer.core.domain.trainer.Trainer;
 
 @Data
+@AllArgsConstructor
 public class Trainee {
     private String id;
     private String name;
@@ -16,4 +19,13 @@ public class Trainee {
     private Trainer trainer;
 
     private Workout[] workouts;
+
+    public Trainee(TraineeRequestDTO requestDTO) {
+        this.name = requestDTO.name();
+        this.age = requestDTO.age();
+        this.gender = Gender.valueOf(requestDTO.gender());
+        this.email =requestDTO. email();
+        this.password = requestDTO.password();
+        this.workouts = new Workout[5];
+    }
 }
