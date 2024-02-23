@@ -1,5 +1,7 @@
 package ms.physicore.trainer.core.domain.trainee;
 
+import java.util.List;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import ms.physicore.trainer.core.DTO.trainee.TraineeRequestDTO;
@@ -18,7 +20,7 @@ public class Trainee {
     private String password;
     private Trainer trainer;
 
-    private Workout[] workouts;
+    private List<Workout> workouts;
 
     public Trainee(TraineeRequestDTO requestDTO) {
         this.name = requestDTO.name();
@@ -26,6 +28,5 @@ public class Trainee {
         this.gender = Gender.valueOf(requestDTO.gender());
         this.email =requestDTO. email();
         this.password = requestDTO.password();
-        this.workouts = new Workout[5];
     }
 }
