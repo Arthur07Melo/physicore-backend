@@ -26,10 +26,12 @@ public class TraineeConfig {
     
 
     //INTERACTORS
+    @Bean
     CreateTraineeInteractor createTraineeInteractor(TraineeGateway gateway) {
         return new CreateTraineeInteractor(gateway);
     }
 
+    @Bean
     GetTraineeInteractor getTraineeInteractor(TraineeGateway gateway) {
         return new GetTraineeInteractor(gateway);
     }
