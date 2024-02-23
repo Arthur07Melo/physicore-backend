@@ -1,7 +1,7 @@
 package ms.physicore.trainer.infra.config;
 
-import org.springframework.beans.factory.annotation.Configurable;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 
 import ms.physicore.trainer.core.gateways.TraineeGateway;
 import ms.physicore.trainer.core.usecases.get.GetTraineeInteractor;
@@ -10,7 +10,7 @@ import ms.physicore.trainer.data.gateways.TraineeGatewayImpl;
 import ms.physicore.trainer.data.mappers.TraineeMapper;
 import ms.physicore.trainer.data.repositories.TraineeRepository;
 
-@Configurable
+@Configuration
 public class TraineeConfig {
     //DATA
     @Bean
