@@ -27,4 +27,14 @@ public class TrainerEntity {
 
     @OneToMany
     private List<TraineeEntity> trainees;
+
+    public TrainerEntity(String name, int age, Gender gender, String email, String password,
+            List<TraineeEntity> trainees) {
+        this.name = name;
+        this.age = age;
+        this.gender = gender;
+        this.email = email;
+        this.password = password;
+        this.trainees = trainees;
+    }
 }

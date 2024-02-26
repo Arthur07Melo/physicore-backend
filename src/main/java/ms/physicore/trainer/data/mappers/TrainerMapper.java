@@ -17,7 +17,7 @@ public class TrainerMapper {
     public TrainerEntity toEntity(Trainer domainObj) {
         traineeMapper = new TraineeMapper();
 
-        return new TrainerEntity(domainObj.getId(), domainObj.getName(), domainObj.getAge(), domainObj.getGender(), domainObj.getEmail(), 
+        return new TrainerEntity(domainObj.getName(), domainObj.getAge(), domainObj.getGender(), domainObj.getEmail(), 
         domainObj.getPassword(),
         domainObj.getTrainees().stream().map(n -> traineeMapper.toEntity(n)).toList());
     }

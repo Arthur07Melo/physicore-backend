@@ -16,7 +16,9 @@ public class CreateTraineeInteractor {
     public Trainee execute(TraineeRequestDTO requestDTO) throws Exception {
         if(!requestDTO.email().contains("@")) throw new InvalidEmailException();
         if(requestDTO.password().length() < 8) throw new InvalidPasswordException();
+        System.out.println(requestDTO.name());
         Trainee toCreate = new Trainee(requestDTO);
+        System.out.println(toCreate.getName());
         Trainee created = gateway.createTrainee(toCreate);
 
         return created;
